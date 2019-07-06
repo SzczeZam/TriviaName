@@ -1,0 +1,36 @@
+.container {
+    width: 50%;
+    margin: 0 auto;
+    background-color: grey;
+    text-align: center;
+}
+
+#answerList {
+    list-style-type: none;
+    padding: 0;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+#question {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white ;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-style: dotted;
+    border-width: small;
+
+}
+
+.answerChoice {
+    background-color: white;
+    border-style: dashed;
+    border-width: medium;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
