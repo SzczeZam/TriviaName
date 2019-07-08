@@ -5,6 +5,19 @@
     text-align: center;
 }
 
+#timerBox {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: grey
+}
+
+#timer{
+    color: white;
+    font-size: 60px;
+    font-weight: bolder;
+}
+
 #answerList {
     list-style-type: none;
     padding: 0;
@@ -34,4 +47,11 @@
     margin: 0 auto;
     margin-bottom: 10px;
     padding: 10px;
+}
+
+.appendage {
+    width: 50%;
+    text-align: center;
+    color: white;
+    margin: 0 auto;
 }
