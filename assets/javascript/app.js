@@ -20,94 +20,81 @@ var triviaPool = [
     //EACH QUESTION IS AN OBJECT CONTAINING
     q1 = {
         // the actually question
-        question: 'Is this a question?',
+        question: 'What... Is your name?',
 
         // the answer choices to update the DOM with
-        answerChoices: ['yes','yes','no','yes technically but...'],
+        answerChoices: ['Max','Jeff','Sir Lancelot of Camelot','JQuery'],
 
         // the correct answer stored seperately to check input against
-        correctAnswer: 'yes technically but...'
+        correctAnswer: 'Sir Lancelot of Camelot'
     },
 
     q2 = {
-        question: 'Is this the second question?',
+        question: 'What... is your quest?',
 
-        answerChoices: ['yes','yes','no','I sure hope so'],
+        answerChoices: ['to learn all that is learned','To seek the Holy Grail.','no','to cross the bridge of Death'],
 
-        correctAnswer: 'I sure hope so',
+        correctAnswer: 'To seek the Holy Grail.',
     },
 
     q3 = {
-        question:'This is the third question, how are you?' ,
+        question:'What... is your favorite colour?' ,
 
-        answerChoices: ['eh','good','bad','so tired, I am so tired'],
+        answerChoices: ['Periwinkle','Razzmatazz','falu red','Blue'],
 
-        correctAnswer: 'so tired, I am so tired',
+        correctAnswer: 'Blue',
+    },
+// caput mortuum ( worthless remains)
+    q4 = {
+        question: 'What... is the capital of Assyria?',
+
+        answerChoices: ["I don't know that","Auuuuuuuuuuuuugh","Aššur","somewhere Mesopotamian"],
+
+        correctAnswer: "Aššur",
     },
 
-    // q4 = {
-    //     question: ,
+    q5 = {
+        question: 'What is your favorite colour?' ,
 
-    //     answerChoices: [],
+        answerChoices: ['Blue','No, Yel-','caput mortuum','Auuuuuuuuugh'],
 
-    //     correctAnswer: ,
-    // },
+        correctAnswer: 'Auuuuuuuuugh',
+    },
 
-    // q5 = {
-    //     question: ,
+    q6 = {
+        question: 'What… is the air-speed velocity of an unladen swallow?',
 
-    //     answerChoices: [],
+        answerChoices: ['10', '10 kph','at least 12 stones past a river','An African or European swallow?'],
 
-    //     correctAnswer: ,
-    // },
+        correctAnswer: 'An African or European swallow?',
+    },
 
-    // q6 = {
-    //     question: ,
+    q7 = {
+        question: 'How do know so much about swallows?',
 
-    //     answerChoices: [],
+        answerChoices: ["I don't know","I was a hobbyist when I was young","swallows are the premier avian of choice","Well, you have to know these things when you’re a king, you know."],
 
-    //     correctAnswer: ,
-    // },
+        correctAnswer: "Well, you have to know these things when you’re a king, you know.",
+    },
 
-    // q7 = {
-    //     question: ,
-
-    //     answerChoices: [],
-
-    //     correctAnswer: ,
-    // },
-
-    // q8 = {
-    //     question: ,
-
-    //     answerChoices: [],
-
-    //     correctAnswer: ,
-    // },
-
-    // q9 = {
-    //     question: ,
-
-    //     answerChoices: [],
-
-    //     correctAnswer: ,
-    // },
-
-    // q10 = {
-    //     question: ,
-
-    //     answerChoices: [],
-
-    //     correctAnswer: ,
-    // },
+    
 ]
+
+function reset() {
+    wrongCount = 0
+    rightCount = 0
+    usedPool = []
+    questionCount = 0
+    clear()
+    newQuestion()
+}
 
 function clear() {
     $(".answerChoice").empty()
     $(".answerChoice").attr('style','display: none')
     $('#timer').empty()
     $(".appendage").attr('style','display: none')
-    
+    clearInterval(timer)
 }
 
 
@@ -135,7 +122,10 @@ function endScreen(){
     $('#question').text('GAME OVER')
     $('#answerList').append('<p class="appendage" style="display: block">Correct Answers: ' + rightCount + '</p>')
     $('#answerList').append('<p class="appendage" style="display: block">Failures: ' + wrongCount + '</p>')
-}
+    $('#reset').attr('style','display: block')
+    
+}   
+
 
 
 function newQuestion () {
@@ -186,6 +176,11 @@ function newQuestion () {
     }
 }
 
+$('#reset').on('click', function(){
+    console.log("test")
+    $('#reset').attr('style','display: none')
+    reset()
+})
 
 
 $('.answerChoice').on('click', function(){
@@ -203,4 +198,5 @@ $('.answerChoice').on('click', function(){
 
 // INITIALIZATION-------------------------------------------------------------------------------------------
 
-newQuestion()
+// newQuestion()
+endScreen()
