@@ -23,7 +23,7 @@ var triviaPool = [
         question: 'What... Is your name?',
 
         // the answer choices to update the DOM with
-        answerChoices: ['Max','Jeff','Sir Lancelot of Camelot','JQuery'],
+        answerChoices: ['Master Davisdson','Sir Kevin','Sir Lancelot of Camelot','JQuery'],
 
         // the correct answer stored seperately to check input against
         correctAnswer: 'Sir Lancelot of Camelot'
@@ -103,6 +103,7 @@ function randomNum(fromNum,toNum) {
     return number
 }
 
+
 function youWon(){
     rightCount++
     $('#question').text('CORRECT!!!')
@@ -130,7 +131,7 @@ function endScreen(){
 
 function newQuestion () {
 
-    countdown = 10
+    countdown = 20
     
     timer = setInterval(function(){
         countdown--
@@ -198,5 +199,4 @@ $('.answerChoice').on('click', function(){
 
 // INITIALIZATION-------------------------------------------------------------------------------------------
 
-// newQuestion()
 newQuestion()
