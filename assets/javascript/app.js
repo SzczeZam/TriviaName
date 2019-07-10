@@ -199,4 +199,4 @@ $('.answerChoice').on('click', function(){
 // INITIALIZATION-------------------------------------------------------------------------------------------
 
 // newQuestion()
-endScreen()
+newQuestion()
